@@ -117,6 +117,7 @@ vector<token> remove_comments(vector<token> toks) {
             x = toks.erase(x);
             continue;
         }
+        
         if (temp == "*/") {
             removing = false;
             x = toks.erase(x);
