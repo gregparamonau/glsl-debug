@@ -78,7 +78,7 @@ vector<token> str_to_tok(string chunk, int line) {
         if (found_chunk) continue;
 
         for (int x = temp.length(); x > 0; x--) {
-            //if (keyword_list.find(x) == keyword_list.end()) continue; //if no tokens of specific length, skip
+            if (keyword_list.find(x) == keyword_list.end()) continue; //if no tokens of specific length, skip
 
             //check keywords
             if (keyword_list[x].find(temp.substr(0, x)) != keyword_list[x].end()) {
@@ -117,7 +117,7 @@ vector<token> remove_comments(vector<token> toks) {
             x = toks.erase(x);
             continue;
         }
-        
+
         if (temp == "*/") {
             removing = false;
             x = toks.erase(x);
