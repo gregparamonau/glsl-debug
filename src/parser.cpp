@@ -54,7 +54,7 @@ enum class node_type {
     struct_decl, member_access, array_access, assign
 };
 
-enum class exec_result_type { normal, returned, discarded };
+enum class exec_result_type { normal, returned, discarded }; //results of function calls & node executions
 
 struct ast_node {
     node_type type;
@@ -64,10 +64,9 @@ struct ast_node {
 
 //variable tables, struct declaration tables, etc.
 
-//struct declaration table
-unordered_map<string, vector<glsl_struct_field>> struct_definitions;
+unordered_map<string, vector<glsl_struct_field>> struct_definitions; //struct declaration table
 
-unordered_map<string, ast_node*> user_functions;
+unordered_map<string, ast_node*> user_functions; //functions defined by the user
 
 vector<string> parsing_errors; //compiler errors
 
