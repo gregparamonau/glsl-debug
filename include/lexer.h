@@ -3,10 +3,10 @@
 
 #include <vector>
 #include <string>
+#include "types.h"
 
 using namespace std;
 
-struct token{};
 vector<token> tokenize(string filename);
 void initialise_token_list(string filename);
 void print_tokens(vector<token> toks);

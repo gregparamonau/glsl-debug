@@ -6,35 +6,9 @@
 #include <unordered_map>
 #include <sstream>
 #include <cassert>
+#include "types.h"
 
 using namespace std;
-
-//define list of each type
-
-enum class tokentype {
-    keyword,
-    identifier,
-    literal,
-    op,
-    punctuation,
-    eof
-};
-
-unordered_map<string, tokentype> keyword_names = { //used to tell type of keyword
-    {"keyword", tokentype::keyword},
-    {"identifier", tokentype::identifier},
-    {"literal", tokentype::literal},
-    {"op", tokentype:: op},
-    {"punctuation", tokentype::punctuation},
-    {"eof", tokentype::eof}
-};
-unordered_map<int, unordered_map<string, tokentype>> keyword_list = {}; //initialise through text file
-
-struct token {
-    tokentype type;
-    string lexeme;
-    int line;
-};
 
 vector<string> split_line(string line) {
     stringstream ss(line);
